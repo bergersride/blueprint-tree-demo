@@ -1,0 +1,24 @@
+{
+  "name": "react-ts",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "@blueprintjs/core": "3.36.0",
+    "@blueprintjs/docs-theme": "3.9.0",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "classnames": "2.2.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "react-scripts-ts": "latest"
+  }
+}
