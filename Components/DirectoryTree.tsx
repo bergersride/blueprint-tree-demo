@@ -1,4 +1,6 @@
 import * as React from "react";
+import FlexView from 'react-flexview';
+import Panel from "react-flexview";
 
 import {
   Classes,
@@ -9,6 +11,7 @@ import {
   Tooltip,
   Tree
 } from "@blueprintjs/core";
+import "../styles.scss";
 
 interface IDirectoryTreeState {
   nodes: ITreeNode[];
@@ -19,6 +22,7 @@ export interface IDirectoryTreeProps {
   allowMultiSelect: boolean;
   expandCollapseOnClick: boolean;
   nodes: ITreeNode[];
+  className: string;
 }
 
 export class DirectoryTree extends React.Component<
@@ -33,13 +37,25 @@ export class DirectoryTree extends React.Component<
 
   public render() {
     return (
+      <Panel>
+        <FlexView column>
         <Tree
           contents={this.state.nodes}
           onNodeClick={this.handleNodeClick}
           onNodeCollapse={this.handleNodeCollapse}
           onNodeExpand={this.handleNodeExpand}
-          className={Classes.ELEVATION_0}
+          className={Classes.ELEVATION_2}
         />
+
+        <Tree
+          contents={this.state.nodes}
+          onNodeClick={this.handleNodeClick}
+          onNodeCollapse={this.handleNodeCollapse}
+          onNodeExpand={this.handleNodeExpand}
+          className={Classes.ELEVATION_2}
+        />
+        </FlexView>
+        </Panel>
     );
   }
 

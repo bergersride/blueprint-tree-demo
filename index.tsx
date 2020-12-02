@@ -5,7 +5,6 @@ import {
   Tooltip,
   Icon,
   Intent,
-  Tree,
   ITreeNode,
   Button,
   ButtonGroup,
@@ -192,6 +191,7 @@ class App extends React.Component {
     return (
       <div>
         <DirectoryTree
+          className="my-custom-class"
           selectOnClick={false}
           allowMultiSelect={false}
           expandCollapseOnClick={true}
