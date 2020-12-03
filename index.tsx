@@ -16,6 +16,9 @@ import {
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { DirectoryTree } from "./Components/DirectoryTree";
 import "./styles.scss";
+import FlexView from 'react-flexview';
+import ScrollView from 'react-flexview';
+import Panel from "react-flexview";
 
 let dirTreeNodes: ITreeNode[] = [
   {
@@ -189,7 +192,9 @@ class DropdownButton extends React.Component<Props, State> {
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <FlexView height={200} width="25%">
+      <ScrollView>
+      <FlexView column>
         <DirectoryTree
           className="my-custom-class"
           selectOnClick={false}
@@ -197,36 +202,17 @@ class App extends React.Component {
           expandCollapseOnClick={true}
           nodes={dirTreeNodes}
         />
-
-        {/*
-      <DropdownButton
-        items={[
-          {
-            text: 'A',
-            icon: 'chat',
-            onClick: ()=>{
-              console.log('Chat');
-            }
-          },
-          {
-            text: 'f.',
-            icon: 'delete',
-            onClick: ()=>{
-              console.log('Delete');
-            }
-          },
-          'divider',
-          {
-            text: 'fd',
-            icon: 'add',
-            intent: 'success',
-            onClick: ()=>{
-              console.log('Add');
-            }
-          }
-        ]}/>
-        */}
-      </div>
+        
+        <DirectoryTree
+          className="my-custom-class"
+          selectOnClick={false}
+          allowMultiSelect={false}
+          expandCollapseOnClick={true}
+          nodes={dirTreeNodes}
+        />
+        </FlexView>
+        </ScrollView>
+        </FlexView>
     );
   }
 }

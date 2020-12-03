@@ -37,8 +37,6 @@ export class DirectoryTree extends React.Component<
 
   public render() {
     return (
-      <Panel>
-        <FlexView column>
         <Tree
           contents={this.state.nodes}
           onNodeClick={this.handleNodeClick}
@@ -46,16 +44,6 @@ export class DirectoryTree extends React.Component<
           onNodeExpand={this.handleNodeExpand}
           className={Classes.ELEVATION_2}
         />
-
-        <Tree
-          contents={this.state.nodes}
-          onNodeClick={this.handleNodeClick}
-          onNodeCollapse={this.handleNodeCollapse}
-          onNodeExpand={this.handleNodeExpand}
-          className={Classes.ELEVATION_2}
-        />
-        </FlexView>
-        </Panel>
     );
   }
 
