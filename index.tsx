@@ -192,7 +192,8 @@ class DropdownButton extends React.Component<Props, State> {
 class App extends React.Component {
   render() {
     return (
-      <FlexView height={200} width="25%">
+
+      <FlexView height={300}>
       <ScrollView>
       <FlexView column>
         <DirectoryTree
