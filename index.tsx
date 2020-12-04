@@ -19,6 +19,8 @@ import "./styles.scss";
 import FlexView from 'react-flexview';
 import ScrollView from 'react-flexview';
 import Panel from "react-flexview";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 
 let dirTreeNodes: ITreeNode[] = [
   {
