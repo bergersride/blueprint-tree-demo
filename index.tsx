@@ -16,10 +16,6 @@ import {
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { DirectoryTree } from "./Components/DirectoryTree";
 import "./styles.scss";
-import FlexView from 'react-flexview';
-import ScrollView from 'react-flexview';
-import Panel from "react-flexview";
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 
 let dirTreeNodes: ITreeNode[] = [
@@ -195,9 +191,11 @@ class App extends React.Component {
   render() {
     return (
 
-      <FlexView height={300}>
-      <ScrollView>
-      <FlexView column>
+      <div className="app-container">
+  <header>Header</header>
+
+  <main>
+    <div className="panel panel-left">
         <DirectoryTree
           className="my-custom-class"
           selectOnClick={false}
@@ -205,17 +203,27 @@ class App extends React.Component {
           expandCollapseOnClick={true}
           nodes={dirTreeNodes}
         />
+        <DirectoryTree
+          className="my-custom-class"
+          selectOnClick={false}
+          allowMultiSelect={false}
+          expandCollapseOnClick={true}
+          nodes={dirTreeNodes}
+        />
+    </div>
+
+    <div className="panel panel-middle">
+    </div>
+
+    <div className="panel panel-right">
+    </div>
+
+  </main>
+
+  <footer>Footer</footer>
+</div> // app-container
+
         
-        <DirectoryTree
-          className="my-custom-class"
-          selectOnClick={false}
-          allowMultiSelect={false}
-          expandCollapseOnClick={true}
-          nodes={dirTreeNodes}
-        />
-        </FlexView>
-        </ScrollView>
-        </FlexView>
     );
   }
 }
