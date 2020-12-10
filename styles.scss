@@ -1,21 +1,3 @@
-.dropdown_button{
-  
-}
-.dropdown_button_button{
-  flex: 1 1 auto;
-}
-.dropdown_button_arrow{
-  flex: 0 0 auto;
-}
-
-.dropdown_button_body{
-  
-}
-
-.my-custom-class {
-    width: 50%;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -39,7 +21,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  background-color: red;
+  background-color: grayscale($color: rgb(56, 56, 241));
 }
 
 main {
@@ -60,7 +42,7 @@ main {
   order: 1;
   flex: 1;
   flex-direction: column;
-  background-color: #BCD39B;
+  background-color: grayscale($color: rgb(191, 191, 247));
 }
 
 .panel-middle {
@@ -86,5 +68,5 @@ footer {
   justify-content: center;
   align-items: center;
 
-  background-color: blue;
+  background-color: grayscale($color: rgb(56, 56, 241));
 }

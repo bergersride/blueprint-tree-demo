@@ -1,6 +1,4 @@
 import * as React from "react";
-import FlexView from 'react-flexview';
-import Panel from "react-flexview";
 
 import {
   Classes,
@@ -52,15 +50,15 @@ export class DirectoryTree extends React.Component<
     _nodePath: number[],
     e: React.MouseEvent<HTMLElement>
   ) => {
-    if (this.props.selectOnClick) {
+    if (this.props.selectOnClick && !nodeData.hasCaret) {
       const originallySelected = nodeData.isSelected;
-      if (this.props.allowMultiSelect && !e.shiftKey) {
+      if (!this.props.allowMultiSelect) {
         this.forEachNode(this.state.nodes, n => (n.isSelected = false));
       }
       nodeData.isSelected =
         originallySelected == null ? true : !originallySelected;
       this.setState(this.state);
-    } else if (this.props.expandCollapseOnClick) {
+    } else if (this.props.expandCollapseOnClick && nodeData.hasCaret) {
       if (nodeData.isExpanded) {
         this.handleNodeCollapse(nodeData);
       } else {
